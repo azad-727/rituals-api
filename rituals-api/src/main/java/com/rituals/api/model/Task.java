@@ -13,5 +13,7 @@ public class Task {
 
     private boolean isCompleted = false;
     private int estimatedMinutes;
+    private String startTime;
+    private String endTime;
     private String category;
 }
