@@ -23,10 +23,10 @@ public class DailyLogController {
         return ResponseEntity.ok(log);
     }
 
-    @PostMapping("/{userId}/{data}/tasks")
+    @PostMapping("/{userId}/{date}/tasks")
     public ResponseEntity<DailyLog> addTask(
-            @PathVariable String userId,
-            @PathVariable String date, // Expected format: YYYY-MM-DD
+            @PathVariable("userId") String userId,
+            @PathVariable("date") String date, // Expected format: YYYY-MM-DD
             @RequestBody Task task) {
 
         LocalDate parsedDate = LocalDate.parse(date);

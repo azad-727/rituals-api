@@ -11,8 +11,8 @@ import java.util.Optional;
 
 @Repository
 public interface DailyLogRepository extends MongoRepository<DailyLog, String> {
-    Optional<DailyLog> findByUserIdAndLogDate(String userId, LocalDate logData);
+    Optional<DailyLog> findByUserIdAndLogData(String userId, LocalDate logData);
 
-    List<DailyLog> findByUserIdOrderByLogDateDesc(String userId);
+    List<DailyLog> findByUserIdOrderByLogDataDesc(String userId);
 
 }
