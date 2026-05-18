@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/rituals")
@@ -23,6 +24,11 @@ public class DailyLogController {
     public ResponseEntity<DailyLog> getTodayLog(@PathVariable String userId){
         DailyLog log=dailyLogService.getOrCreateLogForToday(userId);
         return ResponseEntity.ok(log);
+    }
+    @GetMapping("history/{userId}")
+    public ResponseEntity<List<DailyLog>> getUserHistory(@PathVariable String userId){
+        List<DailyLog> history=dailyLogRepository.findAllByUserIdOrderByLogDateAsc(userId);
+        return ResponseEntity.ok(history);
     }
     @PutMapping("/{userId}/{date}")
     public ResponseEntity<DailyLog> updateDailyTasks(
