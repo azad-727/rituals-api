@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b6f59661-c0a9-45e8-8133-3742642714c3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +44,17 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="Application" factoryName="Application">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <envs>
         <env name="GEMINI_API_KEY" value="AIzaSyDqtWQH66Itl5yeGuKU27x3nq17XdYgE2M" />
       </envs>
+      <option name="MAIN_CLASS_NAME" value="com.rituals.api.RitualsApiApplication" />
+      <module name="rituals-api" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
       <module name="rituals-api" />
       <method v="2">
         <option name="Make" enabled="true" />
