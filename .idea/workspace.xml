@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f59661-c0a9-45e8-8133-3742642714c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/controller/OracleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/dto/TelemetryRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/service/OracleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/controller/DailyLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/controller/DailyLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/repository/DailyLogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/repository/DailyLogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/service/OracleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/service/OracleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
