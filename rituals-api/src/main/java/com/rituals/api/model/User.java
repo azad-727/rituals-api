@@ -16,10 +16,11 @@ import java.time.Instant;
 public class User {
     @Id
     private String id;
-    private String username;
     private String email;
+    private String name;
+    private String password;
     private String currentPrimaryGoal;
-
+    private String role = "ROLE_USER";
     @Builder.Default
     private Instant joinedAt=Instant.now();
 
