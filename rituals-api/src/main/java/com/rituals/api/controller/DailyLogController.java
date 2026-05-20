@@ -27,7 +27,7 @@ public class DailyLogController {
     }
     @GetMapping("history/{userId}")
     public ResponseEntity<List<DailyLog>> getUserHistory(@PathVariable String userId){
-        List<DailyLog> history=dailyLogRepository.findAllByUserIdOrderByLogDateAsc(userId);
+        List<DailyLog> history=dailyLogRepository.findAllByUserIdOrderByLogDataAsc(userId);
         return ResponseEntity.ok(history);
     }
     @PutMapping("/{userId}/{date}")

@@ -14,6 +14,6 @@ public interface DailyLogRepository extends MongoRepository<DailyLog, String> {
     Optional<DailyLog> findByUserIdAndLogData(String userId, LocalDate logData);
 
     List<DailyLog> findByUserIdOrderByLogDataDesc(String userId);
-    List<DailyLog> findAllByUserIdOrderByLogDateAsc(String userId);
+    List<DailyLog> findAllByUserIdOrderByLogDataAsc(String userId);
 
 }
