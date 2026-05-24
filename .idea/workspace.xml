@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6f59661-c0a9-45e8-8133-3742642714c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/service/CustomUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/service/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/config/JwtAuthFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rituals-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/model/RoutineTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/model/RoutineTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rituals-api/src/main/java/com/rituals/api/service/JwtService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,31 +35,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.RitualsApiApplication.executor": "Run",
-    "Application.Unnamed.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feat/security-auth",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.RitualsApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/security-auth&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <envs>
-        <env name="GEMINI_API_KEY" value="AIzaSyDqtWQH66Itl5yeGuKU27x3nq17XdYgE2M" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.rituals.api.RitualsApiApplication" />
-      <module name="rituals-api" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
+      <envs>
+        <env name="GEMINI_API_KEY" value="AIzaSyCztJuHDUt5O0WKG2AowQXoIdfCVoqs81U" />
+      </envs>
       <module name="rituals-api" />
       <method v="2">
         <option name="Make" enabled="true" />

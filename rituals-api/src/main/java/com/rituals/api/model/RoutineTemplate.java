@@ -28,5 +28,7 @@ public class RoutineTemplate {
     private Map<String, List<Task>> weeklySchedule = new HashMap<>();
     @Builder.Default
     private boolean isActive=true;
+    private String durationMode;
+    private Integer durationDays;
 
 }

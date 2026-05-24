@@ -1,5 +1,6 @@
 package com.rituals.api.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,31 +11,62 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
+    @Autowired
+    private JwtAuthFilter jwtAuthFilter;
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                // 1. Disable CSRF (Safe because we are using JWTs, not browser cookies)
+                // 1. Enable Global CORS rules
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+
+                // 2. Disable CSRF
                 .csrf(csrf -> csrf.disable())
 
-                // 2. The Routing Firewall
+                // 3. The Routing Firewall
                 .authorizeHttpRequests(auth -> auth
-                        // OPEN DOORS: Anyone can access the login and registration endpoints
                         .requestMatchers("/api/v1/auth/**").permitAll()
-                        // CLOSED DOORS: Every other endpoint requires a valid JWT Passport
                         .anyRequest().authenticated()
                 )
 
-                // 3. Stateless Architecture
+                // 4. Stateless Architecture
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                );
+                )
+                .addFilterBefore(jwtAuthFilter, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+
+        // Whitelist your React frontend URLs
+        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000"));
+
+        // Allow all standard HTTP methods
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+
+        // Allow React to send the Authorization header (for the JWT)
+        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
+
+        // Allow credentials (important if you ever add cookies later)
+        configuration.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+
+        // Apply this rulebook to every single endpoint in the API
+        source.registerCorsConfiguration("/**", configuration);
+
+        return source;
     }
 
     // 4. The Cryptographic Shredder
