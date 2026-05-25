@@ -50,22 +50,19 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         // Whitelist your React frontend URLs
-        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:3000"));
-
+        configuration.setAllowedOrigins(List.of(
+                "http://localhost:5173",
+                "https://rituals-client.vercel.app" // DO NOT put a trailing slash here!
+        ));
         // Allow all standard HTTP methods
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
-        // Allow React to send the Authorization header (for the JWT)
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
-
-        // Allow credentials (important if you ever add cookies later)
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-
-        // Apply this rulebook to every single endpoint in the API
         source.registerCorsConfiguration("/**", configuration);
-
         return source;
     }
 
