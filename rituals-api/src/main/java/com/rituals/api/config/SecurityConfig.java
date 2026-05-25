@@ -49,16 +49,15 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        // Whitelist your React frontend URLs
-        configuration.setAllowedOrigins(List.of(
+        // THE FIX: Use Patterns instead of strict Origins
+        configuration.setAllowedOriginPatterns(List.of(
                 "http://localhost:5173",
-                "https://rituals-client.vercel.app" // DO NOT put a trailing slash here!
+                "https://rituals-client.vercel.app",
+                "https://*.vercel.app" // This magic wildcard trusts all Vercel preview links!
         ));
-        // Allow all standard HTTP methods
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept")); // Added Accept just to be safe
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
