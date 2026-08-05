@@ -33,7 +33,7 @@ public class SecurityConfig {
 
                 // 3. The Routing Firewall
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/api/v1/auth/**", "/api/health").permitAll()
                         .anyRequest().authenticated()
                 )
 
