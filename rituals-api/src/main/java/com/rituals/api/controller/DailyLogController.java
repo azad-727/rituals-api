@@ -57,6 +57,22 @@ public class DailyLogController {
 
         return ResponseEntity.ok(updatedLog);
     }
+    @PatchMapping("/{userId}/{date}/emoji")
+    public ResponseEntity<DailyLog> updateDayEmoji(
+            @PathVariable("userId") String userId,
+            @PathVariable("date") String date,
+            @RequestBody java.util.Map<String, String> body) {
+
+        String customId = userId + "_" + date.replace("-", "");
+
+        DailyLog dailyLog = dailyLogRepository.findById(customId)
+                .orElseThrow(() -> new RuntimeException("Log not found for date: " + date));
+
+        dailyLog.setDayEmoji(body.get("emoji"));
+        DailyLog savedLog = dailyLogRepository.save(dailyLog);
+
+        return ResponseEntity.ok(savedLog);
+    }
 
 
 }

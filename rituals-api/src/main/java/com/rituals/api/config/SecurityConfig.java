@@ -56,7 +56,7 @@ public class SecurityConfig {
                 "https://*.vercel.app" // This magic wildcard trusts all Vercel preview links!
         ));
 
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept")); // Added Accept just to be safe
         configuration.setAllowCredentials(true);
 

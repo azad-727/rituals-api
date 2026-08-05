@@ -49,6 +49,9 @@ public class DailyLogService {
                         newTask.setTitle(t.getTitle());
                         newTask.setEstimatedMinutes(t.getEstimatedMinutes());
                         newTask.setCategory(t.getCategory());
+                        newTask.setStartTime(t.getStartTime());
+                        newTask.setEndTime(t.getEndTime());
+                        newTask.setEmoji(t.getEmoji());
                         // default completion is already false, but enforcing it:
                         newTask.setCompleted(false);
                         return newTask;

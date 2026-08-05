@@ -23,4 +23,5 @@ public class Task {
     private String startTime;
     private String endTime;
     private String category;
+    private String emoji;
 }

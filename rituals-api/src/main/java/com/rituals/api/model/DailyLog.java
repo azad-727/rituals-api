@@ -29,5 +29,6 @@ public class DailyLog {
     @Builder.Default
     private double burnoutRiskScore = 0.0;
 
+    private String dayEmoji;
 
 }
